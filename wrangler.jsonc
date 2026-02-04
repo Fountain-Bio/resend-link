@@ -1,8 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "resend-links",
+  "name": "resend-link",
   "main": "src/index.ts",
   "compatibility_date": "2025-10-08",
+  "compatibility_flags": ["nodejs_compat"],
   "observability": {
     "enabled": true
   }
