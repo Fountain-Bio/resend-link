@@ -40,9 +40,52 @@ bun run generate-jwt -- --secret "your-jwt-secret" --email-id "email-abc123" --e
 
 ## Deploy
 
+### First-time setup
+
+1. Authenticate with Cloudflare:
+
+```sh
+bunx wrangler login
+```
+
+2. Set the required secrets:
+
+```sh
+bunx wrangler secret put RESEND_API_KEY
+bunx wrangler secret put RESEND_JWT_SECRET
+```
+
+Each command will prompt you to paste the value interactively (it won't be echoed to the terminal).
+
+3. Deploy the worker:
+
 ```sh
 bun run deploy
 ```
+
+### Subsequent deploys
+
+```sh
+bun run deploy
+```
+
+### Managing secrets
+
+To update a secret, re-run the `wrangler secret put` command — it overwrites the existing value.
+
+To list secrets (names only, values are never shown):
+
+```sh
+bunx wrangler secret list
+```
+
+To delete a secret:
+
+```sh
+bunx wrangler secret delete SECRET_NAME
+```
+
+You can also manage secrets in the [Cloudflare dashboard](https://dash.cloudflare.com/) under **Workers & Pages > resend-links > Settings > Variables and Secrets**.
 
 ## Regenerate Cloudflare types
 
