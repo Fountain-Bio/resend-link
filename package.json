@@ -15,9 +15,9 @@
     "generate-jwt": "bun scripts/generate-jwt.ts"
   },
   "dependencies": {
-    "hono": "^4.12.7",
-    "jose": "^6.2.1",
-    "resend": "^6.9.3"
+    "hono": "^4.12.9",
+    "jose": "^6.2.2",
+    "resend": "^6.10.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.2",
